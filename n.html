@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha Sim ou Não</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ff0000; /* Fundo vermelho */
+            flex-direction: column;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: white; /* Texto branco para destacar no fundo vermelho */
+        }
+        #buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%; /* Faz com que os botões ocupem a largura da tela */
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            flex: 1; /* Faz com que os botões se ajustem ao espaço disponível */
+            margin: 0 10px;
+        }
+        #nao {
+            position: relative; /* Corrige o botão "Não" para mantê-lo no layout */
+        }
+    </style>
+</head>
+<body>
+    <h1>vamo sair moça ?</h1>
+    <div id="buttons">
+        <button id="sim">Sim</button>
+        <button id="nao">Não</button>
+    </div>
+
+    <script>
+        const btnNao = document.getElementById('nao');
+
+        btnNao.addEventListener('mouseover', () => {
+            // Calcula uma nova posição aleatória para o botão "Não" dentro dos limites da tela
+            const maxX = window.innerWidth - btnNao.offsetWidth;
+            const maxY = window.innerHeight - btnNao.offsetHeight;
+
+            const x = Math.random() * maxX;
+            const y = Math.random() * maxY;
+
+            // Define a nova posição mantendo o botão visível
+            btnNao.style.position = 'absolute';
+            btnNao.style.left = `${x}px`;
+            btnNao.style.top = `${y}px`;
+        });
+
+        document.getElementById('sim').addEventListener('click', () => {
+            alert("bo marcar moçaksksksa");
+        });
+
+        btnNao.addEventListener('click', () => {
+            alert("bo marcar moçaksksksa");
+        });
+    </script>
+</body>
+</html>
